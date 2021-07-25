@@ -1,0 +1,10 @@
+.index {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 50PX);
+  .tab-panel {
+    flex: 1;
+    overflow-y: auto;
+    background: rgba(230, 230, 230, 40);
+  }
+}

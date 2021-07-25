@@ -1,0 +1,35 @@
+.home-table {
+  background: #fff;
+  border-radius: 26PX;
+  overflow: hidden;
+  padding: 13PX;
+  margin-bottom: 15PX;
+
+  .at-tabs__underline {
+    height: 0!important;
+    width: 0!important;
+    background: none;
+  }
+  .at-tabs__item {
+    color: #a8a8a8;
+  }
+  .at-tabs__item--active {
+    font-size: 14PX;
+    font-family: PingFangSC-regular;
+    font-weight: 800;
+    color: #000;
+  }
+  .at-tabs__item-underline {
+    content: '';
+    position: relative;
+    background: none;
+    width: 100%;
+    height: 14PX;
+    // background-color: none;
+    background: url('../../../../assets/images/svg/md-school.svg') center no-repeat;
+    background-size: contain;
+    margin-bottom: 5PX;
+  }
+}
+
+

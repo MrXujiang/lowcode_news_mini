@@ -1,0 +1,28 @@
+.hot-word {
+  .title {
+    display: flex;
+    margin: 15PX 0 3PX;
+    .title-inner-img {
+      width: 20PX;
+      height: 20PX;
+      display: inline-block;
+    }
+    text {
+      flex: 1;
+      font-size: 14PX;
+      color: #a8a8a8;
+      padding-left: 7PX;
+    }
+  }
+
+  .hot-word-list {
+    margin-top: 15PX;
+    .hot-badge {
+      margin: 0 13PX 8PX 0;
+      .at-button--small {
+        padding: 0 15PX;
+      }
+    }
+  }
+}
+

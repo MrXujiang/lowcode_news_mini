@@ -1,0 +1,49 @@
+@import '../../../../styles/mixin.scss';
+
+.info-list {
+  font-size: 14PX;
+  .at-col-6 {
+    max-width: 48.5%;
+  }
+
+  .info-item {
+    .title {
+      font-size: 13PX;
+      margin: 9PX 0 15px;
+      height: 35PX;
+      @include show_line(2);
+    }
+  }
+}
+
+.img-wrap {
+  position: relative;
+  image {
+    display: block;
+  }
+
+  .star-flag {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url('../../../../assets/images/svg/hot.svg') 4PX rgba(0, 0, 0, .1) no-repeat;
+    color: #fff;
+    font-size: 12PX;
+    padding: 2PX 2PX 2PX 19PX;
+    border-radius: 10px 0px 10px 0px;
+  }
+  .type-flag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #0CB1FF;
+    color: #fff;
+    font-size: 12PX;
+    padding: 2PX 5PX;
+    border-radius: 0px 10px 0px 10px;
+  }
+}
+
+.img-info {
+  width: 100%;
+}

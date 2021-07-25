@@ -1,0 +1,34 @@
+@import '../../../../styles/mixin.scss';
+
+.list-item {
+  border-radius: 10PX;
+  box-shadow: 0px 2px 6px 0px rgba(204, 204, 204, 60);
+  margin: 3PX 3PX 10PX;
+  padding: 15PX 12PX;
+  max-height: 154PX;
+  .top-title {
+    margin-bottom: 17PX;
+    font-size: 13PX;
+    font-weight: 800;
+    @include show_line(1);
+  }
+  .bottom-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .info-lf {
+      margin-right: 13PX;
+      .info {
+        font-size: 11PX;
+        margin-bottom: 20PX;
+      }
+      .time {
+        font-size: 10PX;
+        color: #d8d8d8;
+      }
+    }
+    .img-rt {
+      width: 120PX;
+    }
+  }
+}
