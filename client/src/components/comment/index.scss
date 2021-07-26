@@ -98,13 +98,13 @@
         height: 32px;
         position: absolute;
         left: 15px;
-        top: 0;
-        transform: translateY(35%);
+        top: 50%;
+        transform: translateY(-50%);
         background: url('../../assets/images/svg/pen.svg') 0 0 no-repeat;
         background-size: 100% 100%;
       }
       input {
-
+        height: 100%;
       }
     }
     .star,.forward {

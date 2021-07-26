@@ -29,6 +29,12 @@
           "pathName": "pages/combatDetail/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/help/index",
+          "pathName": "pages/help/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

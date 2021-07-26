@@ -1,5 +1,5 @@
 swiper{
-  height: 190PX;
+  height: 380px;
 }
 
 .swiper-box{
@@ -10,26 +10,26 @@ swiper{
 .swiper-box image {
   width: 100%;
   height: 100%;
-  border-radius: 0px 0px 26PX 26PX;
+  border-radius: 0px 0px 50px 50px;
 }
 
 .dots{
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 55PX;
+  bottom: 110px;
   display: flex;
   justify-content: center;
 }
 .dot{
-  margin: 0 8rpx;
-  width: 10PX;
-  height: 2PX;
+  margin: 0 8px;
+  width: 20px;
+  height: 4px;
   background: #fff;
   transition: all .6s;
 }
 .dot.active{
-  width: 12PX;
+  width: 24px;
   background: #bbb;
 
 }
@@ -38,26 +38,26 @@ swiper{
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 18PX;
+  bottom: 36px;
   margin: auto;
-  padding: 0 15PX;
+  padding: 0 30px;
   display: flex;
   align-items: center;
   // justify-content: center;
   border-radius: 10px;
   background: #fff;
   color: #777;
-  width: 250PX;
-  height: 30PX;
-  line-height: 30PX;
-  font-size: 12PX;
+  width: 500px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 34px;
   text {
     flex: 1;
-    margin-left: 20PX;
+    margin-left: 40px;
   }
   image {
-    width: 18PX;
-    height: 18PX;
+    width: 36px;
+    height: 36px;
   }
 }
 

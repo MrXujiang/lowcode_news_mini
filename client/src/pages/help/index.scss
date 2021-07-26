@@ -1,9 +1,26 @@
-.index {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 50PX);
-  .tab-panel {
-    flex: 1;
-    overflow-y: auto;
+page {
+  background: #fff;
+}
+.help-container {
+  background: #e6e6e6;
+  .at-textarea {
+    background-color: #e6e6e6 !important;
+    color: #999;
+  }
+  .at-image-picker__choose-btn {
+    background: #fff;
+  }
+
+  .foot-btn {
+    width: 520px;
+    position: fixed;
+    margin: auto;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    > view {
+      border-radius: 160px;
+      background: #0cb1ff;
+    }
   }
 }

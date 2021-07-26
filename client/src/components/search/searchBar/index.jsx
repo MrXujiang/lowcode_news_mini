@@ -39,15 +39,14 @@ export default class SearchBar extends Component {
   render() {
     const {searchValue, onChange, onActionClick, onClear } = this.props
     return (
-      <View className='serach-bar'>
-        <AtSearchBar
-          placeholder='搜索课程/教师/文章'
-          value={searchValue}
-          onChange={onChange}
-          onActionClick={onActionClick}
-          onClear={onClear}
-        />
-      </View>
+      <AtSearchBar
+        className='serach-bar'
+        placeholder='搜索课程/教师/文章'
+        value={searchValue}
+        onChange={onChange}
+        onActionClick={onActionClick}
+        onClear={onClear}
+      />
     )
   }
 }

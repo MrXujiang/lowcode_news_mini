@@ -2,8 +2,8 @@
   background: #fff;
   border-radius: 26PX;
   overflow: hidden;
-  padding: 13PX;
-  margin-bottom: 15PX;
+  padding: 26px;
+  margin-bottom: 30px;
 
   .at-tabs__underline {
     height: 0!important;
@@ -14,7 +14,7 @@
     color: #a8a8a8;
   }
   .at-tabs__item--active {
-    font-size: 14PX;
+    font-size: 28px;
     font-family: PingFangSC-regular;
     font-weight: 800;
     color: #000;
@@ -24,11 +24,11 @@
     position: relative;
     background: none;
     width: 100%;
-    height: 14PX;
+    height: 28px;
     // background-color: none;
     background: url('../../../../assets/images/svg/md-school.svg') center no-repeat;
     background-size: contain;
-    margin-bottom: 5PX;
+    margin-bottom: 10px;
   }
 }
 
