@@ -1,0 +1,133 @@
+@import '../../styles/mixin.scss';
+
+.comment-container {
+  .comment-list-container {
+    margin-top: 24px;
+    padding-top: 30px;
+    border-radius: 16px;
+    position: relative;
+    background: #fff;
+    .title {
+      margin-top: 0;
+    }
+    .comment-list {
+      margin: 0 30px;
+      .comment-item {
+        height: 240px;
+        padding: 30px 0 ;
+        display: flex;
+
+        Image {
+          width: 90px;
+          margin-right: 20px;
+        }
+        .comment-rt {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .post-content {
+            line-height: 37px;
+            font-size: 24px;
+            @include show_line(3);
+          }
+        }
+
+        .comment-about-info {
+          font-size: 2px;
+          color: #ececec;
+          display: flex;
+          justify-content: space-between;
+          .like {
+            position: relative;
+            padding-left: 60px;
+            &:before {
+              content: '';
+              width: 40px;
+              height: 40px;
+              position: absolute;
+              left: 0;
+              top: 0;
+              transform: translateY(-25%);
+              background: url('../../assets/images/svg/like.svg') 0 0 no-repeat;
+            }
+          }
+        }
+      }
+
+    }
+    .foot-more {
+      padding: 40px 0 45px;
+      text-align: center;
+      font-size: 25px;
+      color: #ccc;
+    }
+    .back-btn {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      right: 32px;
+      bottom: 65px;
+      text-align: center;
+      line-height: 100px;
+      font-size: 24px;
+      color: #fff;
+      background: #1890ff;
+    }
+  }
+
+  .add-comment-container {
+    height: 110px;
+    margin-top: 18px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    color: #ccc;
+    background: #fff;
+
+    .input-wrapper {
+      flex: 1;
+      padding-left: 50px;
+      position: relative;
+      background: #f8f8f8;
+      border-radius: 50px;
+      &:before {
+        content: '';
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        left: 15px;
+        top: 0;
+        transform: translateY(35%);
+        background: url('../../assets/images/svg/pen.svg') 0 0 no-repeat;
+        background-size: 100% 100%;
+      }
+      input {
+
+      }
+    }
+    .star,.forward {
+      position: relative;
+      margin-left: 40px;
+      padding-left: 53px;
+      &:before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url('../../assets/images/svg/star.svg') 0 0 no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .forward {
+      &:before {
+        background: url('../../assets/images/svg/forward.svg') 0 0  no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+  }
+
+}

@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { View, Text, Button } from '@tarojs/components'
 import { AtSearchBar } from 'taro-ui'
 
-import './searchBar.scss'
+import './index.scss'
 
-export default class Index extends Component {
+export default class SearchBar extends Component {
   constructor () {
     super(...arguments)
     this.state = {

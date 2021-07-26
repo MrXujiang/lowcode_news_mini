@@ -5,10 +5,9 @@ import { AtTabBar } from 'taro-ui'
 import { connect } from 'react-redux'
 import './index.scss'
 
-import Home from '@components/home/index'
-import Combat from '@components/combat/index'
+import { Home, Combat, Interview, About } from '@components'
 
-const homeTabList = [ <Home />, <Combat /> ]
+const homeTabList = [ <Home />, <Combat />, <Interview />, <About /> ]
 
 @connect(({users})=>({
   users
@@ -20,14 +19,13 @@ export default class Index extends Component {
     this.state = {
       current: 1
     }
-
-    this.handleClick = (value) => {
-      this.setState({
-        current: value
-      })
-    }
   }
 
+  handleClick = (value) => {
+    this.setState({
+      current: value
+    })
+  }
 
 
   componentWillMount () { }
@@ -43,10 +41,10 @@ export default class Index extends Component {
   componentDidHide () { }
 
   toLogin = () => {
-    Taro.login({
-      success: function (res) {
-        if (res.code) {
-          console.log(res.code)
+    // Taro.login({
+    //   success: function (res) {
+    //     if (res.code) {
+    //       console.log(res.code)
           //发起网络请求
           // Taro.request({
           //   url: 'https://test.com/onLogin',
@@ -54,11 +52,11 @@ export default class Index extends Component {
           //     code: res.code
           //   }
           // })
-        } else {
-          console.log('登录失败！' + res.errMsg)
-        }
-      }
-    })
+    //     } else {
+    //       console.log('登录失败！' + res.errMsg)
+    //     }
+    //   }
+    // })
   }
 
   render () {

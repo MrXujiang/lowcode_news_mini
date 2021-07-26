@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { View, Text, Image } from '@tarojs/components'
+import Taro from '@tarojs/taro'
 // 引入 Swiper, SwiperItem 组件
 
-import './list.scss'
-export default class Home extends Component {
+import './index.scss'
+export default class CombatList extends Component {
   constructor () {
     super(...arguments)
     this.state = {
@@ -15,8 +16,14 @@ export default class Home extends Component {
     return (
       <>
         {
-          listInfo.map(({ title, info, createTime, img }) => (
-            <View className="list-item">
+          listInfo.map(({ title, info, createTime, img, id }) => (
+            <View
+              key={id}
+              className="list-item" onClick={() => {
+                Taro.navigateTo({
+                  url: '/pages/combatDetail/index?id=' + id
+                })
+              }}>
               <View className="top-title">{title}</View>
               <View className="bottom-info">
                 <View className="info-lf">

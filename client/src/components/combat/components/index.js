@@ -1,4 +1,4 @@
-import CombatList from './list/list.weapp'
+import CombatList from './combatList/index.weapp'
 
 export {
   CombatList

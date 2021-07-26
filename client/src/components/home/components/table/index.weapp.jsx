@@ -7,7 +7,7 @@ import { AtTabs, AtTabsPane } from 'taro-ui'
 // import { getColor, getElementsSite } from '@utils'
 // import { typeConfig, tabList } from './config'
 
-import './table.scss'
+import './index.scss'
 
 export default class HomeTable extends Component {
   constructor () {

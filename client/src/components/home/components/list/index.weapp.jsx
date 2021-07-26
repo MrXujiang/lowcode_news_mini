@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import Taro from '@tarojs/taro'
 
 // 引入 Swiper, SwiperItem 组件
 import { View, Text, Image } from '@tarojs/components'
 import { typeConfig } from '../table/config'
 
-import './list.scss'
+import './index.scss'
 
-export default class HomeTable extends Component {
+export default class HomeList extends Component {
   constructor () {
     super(...arguments)
     this.state = {
@@ -43,7 +44,12 @@ export default class HomeTable extends Component {
               {/* 表格布局内容 */}
               {
                 item.map(({ imgUrl, star, type, title, id }) => (
-                  <View key={id} className='at-col at-col-6 at-col--wrap info-item'>
+                  <View key={id} className='at-col at-col-6 at-col--wrap info-item'
+                  onClick={() => {
+                    Taro.navigateTo({
+                      url: '/pages/combatDetail/index?id=' + id
+                    })
+                  }}>
                     <View className="img-wrap">
                       <Image className="img-info" src={imgUrl} mode="widthFix" />
                       <Text className="star-flag">{star}</Text>

@@ -1,6 +1,6 @@
-import HomeScroll from './swiper/swiper.weapp'
-import HomeTable from './table/table.weapp'
-import HomeList from './list/list.weapp'
+import HomeScroll from './swiper/index.weapp'
+import HomeTable from './table/index.weapp'
+import HomeList from './list/index.weapp'
 
 export {
   HomeScroll,

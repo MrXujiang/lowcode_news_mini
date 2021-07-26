@@ -1,5 +1,5 @@
-import HotWordList from './hotWordList/hotWordList.weapp'
-import Search from './searchBar/searchBar.weapp'
+import HotWordList from './hotWordList'
+import Search from './searchBar'
 
 export {
   HotWordList,

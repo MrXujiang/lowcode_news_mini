@@ -1,8 +1,10 @@
 export default {
   pages: [
-    'pages/login/index',
+    'pages/index/index',
     'pages/search/search',
-    'pages/index/index'
+    'pages/combatDetail/index',
+    'pages/help/index',
+    'pages/login/index'
   ],
   window: {
     backgroundTextStyle: 'light',

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
 // 引入 Swiper, SwiperItem 组件
 import { View, Text, Image, Swiper, SwiperItem } from '@tarojs/components'
-import './swiper.scss'
+import './index.scss'
 const search = require('@assets/images/svg/search.svg')
 
 export default class HomeScroll extends Component {

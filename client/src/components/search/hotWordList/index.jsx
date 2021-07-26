@@ -3,9 +3,9 @@ import { View, Image, Text, Button } from '@tarojs/components'
 import { AtButton, AtBadge } from 'taro-ui'
 
 const searchPageHot = require('@assets/images/svg/searchPageHot.svg')
-import './hotWordList.scss'
+import './index.scss'
 
-export default class Index extends Component {
+export default class hotWordList extends Component {
   constructor () {
     super(...arguments)
     this.state = {

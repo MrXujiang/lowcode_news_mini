@@ -23,6 +23,12 @@
           "pathName": "pages/login/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/combatDetail/index",
+          "pathName": "pages/combatDetail/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
