@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
-import { Search, HotWordList } from '@components/search'
+import { SearchBar, HotWordList } from '@components/search'
 import { HomeList } from '@components/home/components/index.js'
 import './search.scss'
 
@@ -85,9 +85,9 @@ export default class Index extends Component {
     const { isSearch, searchValue, hotWordList, searchList } = this.state
     return (
       <View className='search'>
-        <Search searchValue={searchValue} onChange={this.onChange} onActionClick={this.onActionClick} onClear={this.onClear} />
+        <SearchBar searchValue={searchValue} onChange={this.onChange} onActionClick={this.onActionClick} onClear={this.onClear} />
         {
-          isSearch ? searchList.length ? <HomeList /> : '没有找到您的词条，换个关键词试试？' : <HotWordList hotWordList={hotWordList} />
+          isSearch ? searchList.length ? <HomeList infoList={searchList} /> : '没有找到您的词条，换个关键词试试？' : <HotWordList hotWordList={hotWordList} />
         }
 
       </View>

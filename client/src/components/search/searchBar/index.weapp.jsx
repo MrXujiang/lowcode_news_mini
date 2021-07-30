@@ -45,6 +45,8 @@ export default class SearchBar extends Component {
         value={searchValue}
         onChange={onChange}
         onActionClick={onActionClick}
+        onConfirm={onActionClick}
+        onSubmit={onActionClick}
         onClear={onClear}
       />
     )

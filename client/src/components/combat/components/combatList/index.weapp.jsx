@@ -30,7 +30,7 @@ export default class CombatList extends Component {
                   <View className="info">{info}</View>
                   <View className="time">{createTime}</View>
                 </View>
-                <Image src={img} className="img-rt" mode="widthFix" ></Image>
+                <Image src={img} lazyLoad className="img-rt" mode="widthFix" ></Image>
               </View>
             </View>
           ))

@@ -7,23 +7,23 @@
   padding: 30px 24px;
   max-height: 308px;
   .top-title {
-    margin-bottom: 34px;
-    font-size: 26px;
+    margin-bottom: 40px;
+    font-size: 28px;
     font-weight: 800;
     @include show_line(1);
   }
   .bottom-info {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     .info-lf {
       margin-right: 26px;
       .info {
-        font-size: 24px;
+        font-size: 26px;
         margin-bottom: 40px;
       }
       .time {
-        font-size: 22px;
+        font-size: 24px;
         color: #d8d8d8;
       }
     }

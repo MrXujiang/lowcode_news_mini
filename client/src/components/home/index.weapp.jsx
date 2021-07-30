@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import { AtTabsPane } from 'taro-ui'
+import { View } from '@tarojs/components'
 // 引入 Swiper, SwiperItem 组件
 import { HomeScroll, HomeTable, HomeList } from './components'
+
+import './index.scss'
 
 const tabList = [
   { title: '最新文章' },
@@ -15,7 +17,7 @@ export default class Home extends Component {
   constructor () {
     super(...arguments)
     this.state = {
-      current: 2,
+      active: 2,
       infoList: [
         {
           imgUrl: 'https://i.loli.net/2021/07/14/CDfcwZ3OlBtzdbR.png',
@@ -66,19 +68,21 @@ export default class Home extends Component {
   handleClick = (value) => {
     this.setState({
       ...this.state,
-      current: value
+      active: value
     })
   }
 
   render () {
-    const { current, infoList } = this.state
+    const { active, infoList } = this.state
     return (
       <>
-        <HomeScroll bannerTitle={'搜索求职/面试/实战'} />
-        <HomeTable tabList={tabList} current={current} handleClick={this.handleClick}>
-          {/* 单条表格内容 */}
-          <HomeList column={2} infoList={infoList} />
-        </HomeTable>
+        <View className='home-container'>
+          <HomeScroll bannerTitle={'搜索求职/面试/实战'} />
+          <HomeTable tabList={tabList} current={active} handleClick={this.handleClick}>
+            {/* 单条表格内容 */}
+            <HomeList column={2} infoList={infoList} />
+          </HomeTable>
+        </View>
       </>
 
     )

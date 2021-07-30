@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 // 引入 Swiper, SwiperItem 组件
+import { View } from '@tarojs/components'
 import { HomeScroll, HomeTable } from '../home/components'
 import { CombatList } from './components'
+
+import './index.scss'
 
 const config = {
   tabList: [{ title: '趣谈实战' }],
@@ -46,10 +49,12 @@ export default class Combat extends Component {
     const { tabList, listInfo } = config
     return (
       <>
-        <HomeScroll bannerTitle={'搜索实战课程'} />
-        <HomeTable tabList={tabList}>
-          <CombatList listInfo={listInfo} />
-        </HomeTable>
+        <View className="combat-container">
+          <HomeScroll bannerTitle={'搜索实战课程'} />
+          <HomeTable tabList={tabList}>
+            <CombatList listInfo={listInfo} />
+          </HomeTable>
+        </View>
       </>
     )
   }

@@ -44,7 +44,7 @@ export default class hotWordList extends Component {
     return (
       <View className='hot-word'>
         <View className="title">
-          <Image className="title-inner-img" src={searchPageHot} />
+          <Image lazyLoad className="title-inner-img" src={searchPageHot} />
           <Text>搜索热词</Text>
         </View>
         <View className="hot-word-list">

@@ -38,6 +38,7 @@ export default class ArticleDetial extends Component {
                       return <Image
                         className='at-article__img'
                         src={item.img}
+                        lazyLoad
                         mode='widthFix' />
                   }
                 })

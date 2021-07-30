@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Button, Image, Input } from '@tarojs/components'
-import { AtSearchBar } from 'taro-ui'
+import { View, Text, Image, Input } from '@tarojs/components'
 
 import './index.scss'
 
@@ -8,16 +7,8 @@ export default class Comment extends Component {
   constructor () {
     super(...arguments)
     this.state = {
-      commentDetail: {
-        commentList: []
-      }
+      commentValue: ''
     }
-  }
-
-  onChange = (value) => {
-    this.setState({
-
-    })
   }
 
   onActionClick = () => {
@@ -27,27 +18,6 @@ export default class Comment extends Component {
   componentWillMount() {}
 
   componentDidMount() {
-    const commentDetail = {
-      commentList: [
-        {
-          postimg: 'https://pic.imgdb.cn/item/60fd80525132923bf8efe2dd.png',
-          postName: '柯布',
-          content: '用户创建的内容文本六行，用户创建的内容文本六行，用户创建的内容文本六行，用户创建的内容文本六行，用户创建的内容文本六行…',
-          like: 206
-        },
-        {
-          postimg: 'https://pic.imgdb.cn/item/60fd80525132923bf8efe2dd.png',
-          postName: '吴彦祖',
-          content: '回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容',
-          like: 206
-        }
-      ],
-      star: '20k',
-      forward: 534
-    }
-    this.setState({
-      commentDetail: commentDetail
-    })
   }
 
   componentWillUnmount() {}
@@ -56,10 +26,22 @@ export default class Comment extends Component {
 
   componentDidHide() {}
 
+  // 评论输入的时候
+  onChangeHandler = (value) => {
+    this.setState({
+      commentValue: value
+    })
+  }
+
+  // 评论点确认的时候
+  onConfirmHandler = () => {
+    console.log('我点了个确认')
+  }
 
   render() {
-    const { commentDetail } = this.state
-    const { commentList, star, forward } = commentDetail
+    const { commentValue } = this.state
+    const { commentDetail = {} } = this.props
+    const { commentList = [], star, forward } = commentDetail
     return (
       <View className='comment-container'>
         <View className='comment-list-container'>
@@ -68,7 +50,7 @@ export default class Comment extends Component {
             {
               commentList.map(({postimg, postName, content, like}) => (
                 <View className="comment-item">
-                  <Image className='comment-lt' src={postimg} mode="widthFix"></Image>
+                  <Image lazyLoad className='comment-lt' src={postimg} mode="widthFix"></Image>
                   <View className='comment-rt'>
                     <View className='post-name'>{postName}</View>
                     <View className='post-content'>{content}</View>
@@ -92,7 +74,7 @@ export default class Comment extends Component {
 
         <View className='add-comment-container'>
           <View className='input-wrapper'>
-            <Input placeholder='添加评论' />
+            <Input placeholder='添加评论' value={commentValue} onChange={this.onChangeHandler} onConfirm={this.onConfirmHandler} />
 
           </View>
           <View className='star'>{star}</View>

@@ -1,7 +1,8 @@
 .index {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 50PX);
+  box-sizing: border-box;
+  height: calc(100vh - 120px);
   .tab-panel {
     flex: 1;
     overflow-y: auto;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
-import { Comment, ArticleDetial } from '@components'
+import { ArticleDetial, Comment, Share } from '@components'
 import './index.scss'
 
 export default class Index extends Component {
@@ -9,7 +9,12 @@ export default class Index extends Component {
     super(...arguments)
     this.state = {
       articleDetail: {
-        deatilList: []
+        deatilList: [],
+        commentDetail: {
+          commentList: [],
+          star: 0,
+          forward: 0
+        }
       }
     }
   }
@@ -18,6 +23,7 @@ export default class Index extends Component {
 
   componentDidMount () {
     this.setState({
+      id: Taro.getCurrentInstance().router.params.id || null,
       articleDetail: {
         title: '全国教育工作会议召开，传递这些重要信息！',
         authorHeadImg: 'https://jdc.jd.com/img/200',
@@ -31,7 +37,24 @@ export default class Index extends Component {
           '贯彻新发展理念，构建新发展格局，以推动高质量发展为主'
         ]
       },
-      id: Taro.getCurrentInstance().router.params.id || null
+      commentDetail: {
+        commentList: [
+          {
+            postimg: 'https://pic.imgdb.cn/item/60fd80525132923bf8efe2dd.png',
+            postName: '柯布',
+            content: '用户创建的内容文本六行，用户创建的内容文本六行，用户创建的内容文本六行，用户创建的内容文本六行，用户创建的内容文本六行…',
+            like: 206
+          },
+          {
+            postimg: 'https://pic.imgdb.cn/item/60fd80525132923bf8efe2dd.png',
+            postName: '吴彦祖',
+            content: '回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容',
+            like: 206
+          }
+        ],
+        star: '20k',
+        forward: 534
+      }
     })
   }
 
@@ -42,11 +65,12 @@ export default class Index extends Component {
   componentDidHide () { }
 
   render () {
-    const { id, articleDetail } = this.state
+    const { articleDetail, commentDetail } = this.state
     return (
       <View className='combat-detail-container'>
         <ArticleDetial articleDetail={articleDetail} />
-        <Comment id={id} />
+        <Comment commentDetail={commentDetail} />
+        {/* <Share /> */}
       </View>
     )
   }

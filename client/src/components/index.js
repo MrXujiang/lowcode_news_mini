@@ -4,6 +4,7 @@ import Combat from './combat/index.weapp'
 import Comment from './Comment/index.weapp'
 import Home from './home/index.weapp'
 import Interview from './interview/index.weapp'
+import Share from './Share/index.weapp'
 
 export {
   About,
@@ -11,5 +12,6 @@ export {
   Combat,
   Comment,
   Home,
-  Interview
+  Interview,
+  Share
 }

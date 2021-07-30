@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
-import { AtTextarea, AtImagePicker, AtButton } from 'taro-ui'
+import { AtTextarea, AtImagePicker, AtToast } from 'taro-ui'
 import './index.scss'
 
 export default class Help extends Component {
@@ -9,7 +9,8 @@ export default class Help extends Component {
     super(...arguments)
     this.state = {
       feedback: '',
-      files: []
+      files: [],
+      isOpened: false
     }
   }
 
@@ -58,14 +59,26 @@ export default class Help extends Component {
     })
   }
 
+  onSubmit = () => {
+    this.setState({
+      ...this.state,
+      isOpened: true,
+    })
+    setTimeout(()=>{
+      Taro.navigateBack()
+    },2000)
+
+  }
+
   render () {
-    const { feedback, files } = this.state
+    const { feedback, files, isOpened } = this.state
     return (
       <>
         <View className='help-container'>
           <AtTextarea
             value={feedback}
             onChange={this.handleChange}
+            height="350"
             placeholder='描述问题的详细情况，有助于我们快速帮您解决（必填）'
           />
           <AtImagePicker
@@ -73,9 +86,10 @@ export default class Help extends Component {
             files={files}
             onChange={this.onChange}
           />
-          <View className='foot-btn'>
-            <AtButton type='primary' size='normal'>提交</AtButton>
+          <View className='foot-btn' onClick={this.onSubmit}>
+            提交
           </View>
+          <AtToast isOpened={isOpened} text="感谢您提出的宝贵意见！" icon="heart"></AtToast>
         </View>
       </>
     )

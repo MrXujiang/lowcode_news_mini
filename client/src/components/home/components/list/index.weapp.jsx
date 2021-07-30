@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
+import { formatNumber } from '@utils'
 
 // 引入 Swiper, SwiperItem 组件
 import { View, Text, Image } from '@tarojs/components'
@@ -51,10 +52,9 @@ export default class HomeList extends Component {
                     })
                   }}>
                     <View className="img-wrap">
-                      <Image className="img-info" src={imgUrl} mode="widthFix" />
-                      <Text className="star-flag">{star}</Text>
+                      <Image lazyLoad className="img-info" src={imgUrl} mode="widthFix" lazyLoad />
+                      <Text className="star-flag">{formatNumber(star)}</Text>
                       {typeConfig[type] && <Text className="type-flag">{typeConfig[type]}</Text>}
-
                     </View>
                     <View className="title">{title}</View>
                   </View>

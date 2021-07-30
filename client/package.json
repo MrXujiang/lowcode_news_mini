@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.0",
+    "@tarojs/async-await": "^2.2.10",
     "@tarojs/mini-runner": "3.2.12",
     "@tarojs/webpack-runner": "3.2.12",
     "@types/react": "^17.0.2",

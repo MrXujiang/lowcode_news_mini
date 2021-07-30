@@ -10,17 +10,21 @@ page {
   .at-image-picker__choose-btn {
     background: #fff;
   }
-
+  .at-textarea {
+    border: none;
+  }
   .foot-btn {
-    width: 520px;
+    width: 600px;
+    height: 90px;
+    color: #fff;
+    text-align: center;
     position: fixed;
     margin: auto;
     bottom: 16px;
     left: 0;
     right: 0;
-    > view {
-      border-radius: 160px;
-      background: #0cb1ff;
-    }
+    border-radius: 160px;
+    background: #0cb1ff;
+    line-height: 90px;
   }
 }

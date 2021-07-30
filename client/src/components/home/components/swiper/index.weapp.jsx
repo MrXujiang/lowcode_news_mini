@@ -42,7 +42,7 @@ export default class HomeScroll extends Component {
             {
               imgUrls.map(imgUrl => (
                 <SwiperItem key={imgUrl}>
-                  <Image src={imgUrl} className="slide-image" />
+                  <Image lazyLoad src={imgUrl} className="slide-image" />
                 </SwiperItem>
               ))
             }
@@ -56,7 +56,7 @@ export default class HomeScroll extends Component {
           </View>
           <View onClick={this.toSearchPage} className="search-wrap">
             <Text>{bannerTitle}</Text>
-            <Image src={search} />
+            <Image lazyLoad src={search} />
           </View>
         </View>
       </>
