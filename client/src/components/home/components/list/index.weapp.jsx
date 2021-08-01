@@ -35,13 +35,13 @@ export default class HomeList extends Component {
   }
 
   render () {
-    const { list } = this.state
+    const { list = [] } = this.state
     return (
       <>
         <View className="home-list">
           {/* 单条表格内容 */}
-          {list.map(item => (
-            <View key={item} className='at-row at-row__justify--between info-list'>
+          {list.map((item, index) => (
+            <View key={index} className='at-row at-row__justify--between info-list'>
               {/* 表格布局内容 */}
               {
                 item.map(({ imgUrl, star, type, title, id }) => (

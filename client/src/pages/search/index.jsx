@@ -2,12 +2,9 @@ import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import { SearchBar, HotWordList } from '@components/search'
 import { HomeList } from '@components/home/components/index.js'
-import { withShare } from '@utils'
 
 import './index.scss'
 
-@withShare({
-})
 export default class Index extends Component {
   constructor () {
     super(...arguments)

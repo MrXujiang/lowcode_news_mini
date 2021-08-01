@@ -47,8 +47,8 @@ export default class hotWordList extends Component {
         </View>
         <View className="hot-word-list">
           {
-            hotWordList.map(({title, value}) => (
-              <AtBadge value={value} key={title}  className="hot-badge">
+            hotWordList.map(({title, value}, index) => (
+              <AtBadge value={value} key={index}  className="hot-badge">
                 <AtButton size='small' circle>{title}</AtButton>
               </AtBadge>
             ))

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, Image } from '@tarojs/components'
 import { AtAvatar } from 'taro-ui'
-import Taro from '@tarojs/taro'
-// 引入 Swiper, SwiperItem 组件
 
 import './index.scss'
 export default class ArticleDetial extends Component {
@@ -13,7 +11,8 @@ export default class ArticleDetial extends Component {
   }
 
   render () {
-    const { deatilList, title, authorName, createIime, authorHeadImg } = this.props.articleDetail
+    const { articleDetail = {} } = this.props
+    const { deatilList = [], title, authorName, createIime, authorHeadImg } = articleDetail
     return (
       <>
         <View className='at-article article-container'>
@@ -30,12 +29,13 @@ export default class ArticleDetial extends Component {
           <View className='at-article__content'>
             <View className='at-article__section'>
               {
-                deatilList.map(item => {
+                deatilList.map((item, index) => {
                   switch (typeof item) {
                     case 'string':
-                      return <View className='at-article__p'>{item}</View>
+                      return <View key={index} className='at-article__p'>{item}</View>
                     case 'object':
                       return <Image
+                        key={index}
                         className='at-article__img'
                         src={item.img}
                         lazyLoad

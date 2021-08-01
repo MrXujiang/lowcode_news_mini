@@ -84,7 +84,7 @@ export default class Index extends Component {
     return (
       <View className='combat-detail-container'>
         <ArticleDetial articleDetail={articleDetail} />
-        <Comment commentDetail={commentDetail} onShareAppMessage={this.onShareAppMessage} />
+        <Comment commentDetail={commentDetail} />
       </View>
     )
   }

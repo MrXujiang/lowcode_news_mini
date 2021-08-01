@@ -44,22 +44,25 @@ export default class Index extends Component {
   componentDidHide () { }
 
   toLogin = () => {
-    Taro.login({
-      success: function (res) {
-        if (res.code) {
-          // console.log(res)
-          //发起网络请求
-          // Taro.request({
-          //   url: 'https://test.com/onLogin',
-          //   data: {
-          //     code: res.code
-          //   }
-          // })
-        } else {
-          console.log('登录失败！' + res.errMsg)
+    if (process.env.TARO_ENV === 'weapp') {
+      Taro.login({
+        success: function (res) {
+          if (res.code) {
+            // console.log(res)
+            //发起网络请求
+            // Taro.request({
+            //   url: 'https://test.com/onLogin',
+            //   data: {
+            //     code: res.code
+            //   }
+            // })
+          } else {
+            console.log('登录失败！' + res.errMsg)
+          }
         }
-      }
-    })
+      })
+    }
+
   }
 
   // $setShareTitle = () => {

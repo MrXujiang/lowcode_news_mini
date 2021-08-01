@@ -48,8 +48,8 @@ export default class Comment extends Component {
           <View className='at-article__h1 title'>评论</View>
           <View className='comment-list'>
             {
-              commentList.map(({postimg, postName, content, like}) => (
-                <View className="comment-item">
+              commentList.map(({postimg, postName, content, like}, index) => (
+                <View className="comment-item" key={index}>
                   <Image lazyLoad className='comment-lt' src={postimg} mode="widthFix"></Image>
                   <View className='comment-rt'>
                     <View className='post-name'>{postName}</View>
@@ -75,7 +75,6 @@ export default class Comment extends Component {
         <View className='add-comment-container'>
           <View className='input-wrapper'>
             <Input placeholder='添加评论' value={commentValue} onChange={this.onChangeHandler} onConfirm={this.onConfirmHandler} />
-
           </View>
           <View className='star'>{star}</View>
           <Button openType='share' size='mini' className='forward'>{forward}</Button>

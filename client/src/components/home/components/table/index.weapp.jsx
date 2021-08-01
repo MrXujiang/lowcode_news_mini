@@ -29,8 +29,8 @@ export default class HomeTable extends Component {
             tabList={tabList}
             onClick={handleClick}>
             {
-              tabList.map(({ item, index }) => (
-                <AtTabsPane key={item} current={current} index={current}>
+              tabList.map(({ title }, index) => (
+                <AtTabsPane key={index} current={current} index={current}>
                   {
                     children
                   }

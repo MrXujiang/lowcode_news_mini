@@ -12,22 +12,25 @@ export default class About extends Component {
       aboutList: [
         {
           icon: 'home',
-          title: '关于我们'
-
+          title: '关于我们',
+          id: 111
         },
         {
           icon: 'list',
-          title: '产品列表'
+          title: '产品列表',
+          id: 222
 
         },
         {
           icon: 'help',
           title: '反馈建议',
-          clickHandler: this.toHelpPage
+          clickHandler: this.toHelpPage,
+          id: 333
         },
         {
           icon: 'settings',
-          title: '合作'
+          title: '合作',
+          id: 444
 
         }
       ]
@@ -41,7 +44,7 @@ export default class About extends Component {
   }
 
   render () {
-    const { aboutList } = this.state
+    const { aboutList = [] } = this.state
     return (
       <>
         <View className="about-container">
@@ -50,14 +53,11 @@ export default class About extends Component {
             <View className="tools-title">常用工具</View>
             <View className="common-tools-list">
               {
-                aboutList.map(({ icon, title, clickHandler }) => (
-                  <>
-                    <View onClick={clickHandler} className="common-tools-item">
+                aboutList.map(({ icon, title, clickHandler, id }) => (
+                    <View key={id} onClick={clickHandler} className="common-tools-item">
                       <AtIcon value={icon} size='30' color='#101010 100%' className="icon"></AtIcon>
                       <Text>{title}</Text>
                     </View>
-                  </>
-
                 ))
               }
             </View>

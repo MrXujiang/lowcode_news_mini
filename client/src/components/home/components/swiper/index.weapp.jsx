@@ -30,7 +30,7 @@ export default class HomeScroll extends Component {
 
   render () {
     const { bannerTitle } = this.props
-    const { imgUrls, current } = this.state
+    const { imgUrls = [], current } = this.state
     return (
       <>
         <View className="swiper-box">
@@ -40,8 +40,8 @@ export default class HomeScroll extends Component {
             onChange={this.handleClick}
             autoplay>
             {
-              imgUrls.map(imgUrl => (
-                <SwiperItem key={imgUrl}>
+              imgUrls.map((imgUrl, index) => (
+                <SwiperItem key={index}>
                   <Image lazyLoad src={imgUrl} className="slide-image" />
                 </SwiperItem>
               ))
@@ -50,7 +50,7 @@ export default class HomeScroll extends Component {
           <View className="dots">
             {
               imgUrls.map((imgUrl, index) => (
-                <View key={imgUrl} className={index === current ? 'dot active' : 'dot'}></View>
+                <View key={index} className={index === current ? 'dot active' : 'dot'}></View>
               ))
             }
           </View>

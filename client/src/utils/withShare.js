@@ -16,16 +16,19 @@ function withShare(opts = {}) {
     }))
     class WithShare extends Component {
       async componentWillMount() {
-        await Taro.showShareMenu({
-          withShareTicket: true,
-          menus: ['shareAppMessage', 'shareTimeline'],
-          success(res) {
-            // console.log(res)
-          },
-          fail(e) {
-            // console.log(e)
-          }
-        });
+        if (process.env.TARO_ENV === 'weapp') {
+          await Taro.showShareMenu({
+            withShareTicket: true,
+            menus: ['shareAppMessage', 'shareTimeline'],
+            success(res) {
+              // console.log(res)
+            },
+            fail(e) {
+              // console.log(e)
+            }
+          });
+        }
+
         if (super.componentWillMount) {
           super.componentWillMount();
         }

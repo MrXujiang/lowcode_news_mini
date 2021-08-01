@@ -12,7 +12,7 @@ export default class CombatList extends Component {
   }
 
   render () {
-    const { listInfo } = this.props
+    const { listInfo = [] } = this.props
     return (
       <>
         {
