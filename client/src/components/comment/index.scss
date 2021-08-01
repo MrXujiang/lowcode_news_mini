@@ -88,6 +88,7 @@
 
     .input-wrapper {
       flex: 1;
+      height: 100%;
       padding-left: 50px;
       position: relative;
       background: #f8f8f8;
@@ -111,15 +112,22 @@
       position: relative;
       margin-left: 40px;
       padding-left: 53px;
+      color: #ccc;
+      font-size: 24px;
+      background: none;
       &:before {
         content: '';
         width: 40px;
         height: 40px;
         position: absolute;
         left: 0;
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
         background: url('../../assets/images/svg/star.svg') 0 0 no-repeat;
         background-size: 100% 100%;
+      }
+      &::after {
+        border: none;
       }
     }
     .forward {

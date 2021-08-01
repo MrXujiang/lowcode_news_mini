@@ -23,7 +23,7 @@ export default class HomeScroll extends Component {
     }
     this.toSearchPage = () => {
       Taro.navigateTo({
-        url: '/pages/search/search'
+        url: '/pages/search/index'
       })
     }
   }

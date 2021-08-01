@@ -3,7 +3,10 @@
 export default {
   namespace: 'users',
   state: {
-    title: 'Hello World'
+    title: 'Hello World',
+    userInfo: {
+      shareId: 123
+    }
   },
 
   effects: {},

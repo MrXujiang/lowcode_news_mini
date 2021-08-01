@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
+import Taro from '@tarojs/taro'
 import dva from './utils/dva'
 import { Provider } from 'react-redux'
 import models from './models'
-import Taro from '@tarojs/taro'
 // import '@tarojs/async-await'
 
 import 'taro-ui/dist/style/index.scss'

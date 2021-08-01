@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
-import { View, Text, Image } from '@tarojs/components'
-import { ArticleDetial, Comment, Share } from '@components'
+import { View } from '@tarojs/components'
+import { ArticleDetial, Comment } from '@components'
+import { withShare } from '@utils'
+
 import './index.scss'
 
+@withShare({
+})
 export default class Index extends Component {
   constructor () {
     super(...arguments)
@@ -19,9 +23,10 @@ export default class Index extends Component {
     }
   }
 
-  componentWillMount () { }
+  // UNSAFE_componentWillMount () { }
 
   componentDidMount () {
+    // console.log(this.props)
     this.setState({
       id: Taro.getCurrentInstance().router.params.id || null,
       articleDetail: {
@@ -64,13 +69,22 @@ export default class Index extends Component {
 
   componentDidHide () { }
 
+  $setShareTitle = () => {
+    return this.state.articleDetail.title
+  }
+  $setShareImageUrl = () => {
+    return this.state.articleDetail.authorHeadImg
+  }
+  $setSharePath = () => {
+    return this.props.tid
+  }
+
   render () {
     const { articleDetail, commentDetail } = this.state
     return (
       <View className='combat-detail-container'>
         <ArticleDetial articleDetail={articleDetail} />
-        <Comment commentDetail={commentDetail} />
-        {/* <Share /> */}
+        <Comment commentDetail={commentDetail} onShareAppMessage={this.onShareAppMessage} />
       </View>
     )
   }

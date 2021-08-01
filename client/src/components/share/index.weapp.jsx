@@ -6,7 +6,7 @@ import Taro from '@tarojs/taro'
 import './index.scss'
 
 import './index.scss'
-import imageUrl from '@assets/images/moneykey.png';
+import {config} from '@utils';
 // import qrcode from '../../images/bbbbb.jpg';
 
 export default class Share extends Component {
@@ -76,7 +76,7 @@ export default class Share extends Component {
       // ctx.clip();
       // ctx.stroke();
       // ctx.translate(160,88);
-      ctx.drawImage(imageUrl, -20, -20, 400, 280);
+      ctx.drawImage(config.workImgUrl, -20, -20, 400, 280);
       ctx.restore();
 
       // 绘制文字
@@ -143,7 +143,7 @@ export default class Share extends Component {
       let { isShowCanvas } = this.state;
       return (
         <View className='share-container'>
-          <Button onGetUserInfo={this.getUserInfo} openType="getUserInfo" type="primary" size="mini" className="btn-share">分享图片</Button>
+          <Button onGetUserInfo={this.getUserInfo} openType="share" type="primary" size="mini" className="btn-share">分享图片</Button>
 
           {
             isShowCanvas &&

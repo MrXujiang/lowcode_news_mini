@@ -1,5 +1,5 @@
 export default {
-  navigationBarTitleText: '趣谈前端',
+  navigationBarTitleText: '搜索',
   enableShareAppMessage: true,
   enableShareTimeline: true
 }

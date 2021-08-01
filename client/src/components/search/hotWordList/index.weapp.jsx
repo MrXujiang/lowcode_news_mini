@@ -11,8 +11,6 @@ export default class hotWordList extends Component {
     this.state = {
       searchValue: ''
     }
-    console.log(this.props)
-
   }
 
   onChange = (value) => {

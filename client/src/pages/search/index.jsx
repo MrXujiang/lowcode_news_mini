@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 import { View, Text } from '@tarojs/components'
 import { SearchBar, HotWordList } from '@components/search'
 import { HomeList } from '@components/home/components/index.js'
-import './search.scss'
+import { withShare } from '@utils'
 
+import './index.scss'
+
+@withShare({
+})
 export default class Index extends Component {
   constructor () {
     super(...arguments)
@@ -45,32 +49,7 @@ export default class Index extends Component {
       isSearch: false,
       searchList: []
     }
-
-    this.onChange = (value) => {
-      this.setState({
-        ...this.state,
-        searchValue: value
-      })
-    }
-
-    this.onActionClick = () => {
-      this.setState({
-        ...this.state,
-        isSearch: true
-      })
-      console.log('开始搜索了')
-    }
-
-    this.onClear = () => {
-      this.setState({
-        ...this.state,
-        searchValue: '',
-        isSearch: false
-      })
-    }
   }
-
-  componentWillMount () { }
 
   componentDidMount () {
   }
@@ -80,6 +59,29 @@ export default class Index extends Component {
   componentDidShow () { }
 
   componentDidHide () { }
+
+  onChange = (value) => {
+    this.setState({
+      ...this.state,
+      searchValue: value
+    })
+  }
+
+  onActionClick = () => {
+    this.setState({
+      ...this.state,
+      isSearch: true
+    })
+    console.log('开始搜索了')
+  }
+
+  onClear = () => {
+    this.setState({
+      ...this.state,
+      searchValue: '',
+      isSearch: false
+    })
+  }
 
   render () {
     const { isSearch, searchValue, hotWordList, searchList } = this.state

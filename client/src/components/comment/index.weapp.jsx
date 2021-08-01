@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { View, Text, Image, Input } from '@tarojs/components'
+import { View, Text, Image, Input, Button } from '@tarojs/components'
+import { withShare } from '@utils'
 
 import './index.scss'
-
 export default class Comment extends Component {
   constructor () {
     super(...arguments)
@@ -40,7 +40,7 @@ export default class Comment extends Component {
 
   render() {
     const { commentValue } = this.state
-    const { commentDetail = {} } = this.props
+    const { commentDetail = {}, onShareAppMessage } = this.props
     const { commentList = [], star, forward } = commentDetail
     return (
       <View className='comment-container'>
@@ -78,7 +78,7 @@ export default class Comment extends Component {
 
           </View>
           <View className='star'>{star}</View>
-          <View className='forward'>{forward}</View>
+          <Button openType='share' size='mini' className='forward'>{forward}</Button>
         </View>
       </View>
     )
