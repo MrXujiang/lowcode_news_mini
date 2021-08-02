@@ -6,5 +6,7 @@
   .tab-panel {
     flex: 1;
     overflow-y: auto;
+    display: block;
+    -webkit-overflow-scrolling: touch;
   }
 }
