@@ -18,14 +18,16 @@ export default class About extends Component {
         {
           icon: 'list',
           title: '产品列表',
-          id: 222
+          id: 222,
+          link: 'proList'
 
         },
         {
           icon: 'help',
           title: '反馈建议',
-          clickHandler: this.toHelpPage,
-          id: 333
+          // clickHandler: this.toHelpPage,
+          id: 333,
+          link: 'help'
         },
         {
           icon: 'settings',
@@ -53,8 +55,10 @@ export default class About extends Component {
             <View className="tools-title">常用工具</View>
             <View className="common-tools-list">
               {
-                aboutList.map(({ icon, title, clickHandler, id }) => (
-                    <View key={id} onClick={clickHandler} className="common-tools-item">
+                aboutList.map(({ icon, title, link, id }) => (
+                    <View key={id} onClick={()=>{ link && Taro.navigateTo({
+                      url: '/pages/webView/index?link=' + link
+                    }) }} className="common-tools-item">
                       <AtIcon value={icon} size='30' color='#101010 100%' className="icon"></AtIcon>
                       <Text>{title}</Text>
                     </View>

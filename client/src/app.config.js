@@ -4,7 +4,8 @@ export default {
     'pages/search/index',
     'pages/combatDetail/index',
     'pages/help/index',
-    'pages/login/index'
+    'pages/login/index',
+    'pages/webView/index'
   ],
   window: {
     backgroundTextStyle: 'light',
