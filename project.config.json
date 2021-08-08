@@ -5,7 +5,7 @@
   "description": "趣谈前端",
   "appid": "wx6909e30c6d5826d6",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": false,
     "enhance": true,
     "postcss": false,

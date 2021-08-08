@@ -1,14 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, Image, Button, Canvas } from '@tarojs/components'
 import Taro from '@tarojs/taro'
-// 引入 Swiper, SwiperItem 组件
-
 import './index.scss'
-
-import './index.scss'
-import {config} from '@utils';
-// import qrcode from '../../images/bbbbb.jpg';
-
 export default class Share extends Component {
     config = {
       navigationBarTitleText: '商品详情'
@@ -38,9 +31,13 @@ export default class Share extends Component {
         })
         return
       }
+      const res = Taro.getSystemInfoSync()
+      const { screenHeight, screenWidth } = res
       this.setState({
         isShowCanvas: true,
-        userInfo: e.detail.userInfo
+        userInfo: e.detail.userInfo,
+        screenWidth,
+        screenHeight
       }, () => {
         this.drawImage()
       })
@@ -50,17 +47,21 @@ export default class Share extends Component {
      * 绘制图片的方法
      */
     drawImage = async () => {
+      const { screenHeight, screenWidth } = this.state
+      const { picture, width, height } = this.props
+      console.log(width, height)
+
       //创建canvas对象
       let ctx = Taro.createCanvasContext('cardCanvas');
       //填充背景色
       let grd = ctx.createLinearGradient(0,0,1,500);
-      grd.addColorStop(0, '#1452d0');
+      grd.addColorStop(0, '#FFF'); // #1452d0
       grd.addColorStop(0.5, '#FFF');
       ctx.setFillStyle(grd);
-      ctx.fillRect(0,0,400,500);
+      ctx.fillRect((screenWidth-width)/2,(screenWidth-height)/2-100,width,height);
 
       //绘制圆形用户头像
-      let { userInfo } = this.state;
+      // let { userInfo } = this.state;
       // console.warn("userInfo", userInfo)
       // let res = await Taro.downloadFile({
       //   url: userInfo.avatarUrl
@@ -76,29 +77,29 @@ export default class Share extends Component {
       // ctx.clip();
       // ctx.stroke();
       // ctx.translate(160,88);
-      ctx.drawImage(config.workImgUrl, -20, -20, 400, 280);
+      ctx.drawImage(picture, 0,0, width, height);
       ctx.restore();
 
       // 绘制文字
-      ctx.save()
-      ctx.setFontSize(16)
-      ctx.setFillStyle('#FFF')
+      // ctx.save()
+      // ctx.setFontSize(16)
+      // ctx.setFillStyle('#FFF')
       // ctx.fillText(userInfo.nickName, 100, 200)
-      ctx.setFontSize(12)
-      ctx.setFillStyle('black')
-      ctx.fillText('好喝⾼颜值MEOW莫斯卡托⽓泡葡萄酒甜型⾹槟', 20, 280)
-      ctx.setFontSize(12)
-      ctx.setFillStyle('#b30000')
-      ctx.fillText('￥25.00 - ￥88.00', 50, 300);
-      ctx.setFontSize(12)
-      ctx.setFillStyle('black')
-      ctx.fillText('长按识别二维码', 130, 380)
-      ctx.restore()
+      // ctx.setFontSize(12)
+      // ctx.setFillStyle('black')
+      // ctx.fillText('好喝⾼颜值MEOW莫斯卡托⽓泡葡萄酒甜型⾹槟', 20, 280)
+      // ctx.setFontSize(12)
+      // ctx.setFillStyle('#b30000')
+      // ctx.fillText('￥25.00 - ￥88.00', 50, 300);
+      // ctx.setFontSize(12)
+      // ctx.setFillStyle('black')
+      // ctx.fillText('长按识别二维码', 130, 380)
+      // ctx.restore()
       // 绘制二维码
       // let qrcode = await Taro.downloadFile({
       //  url: 'https://tva1.sinaimg.cn/large/00831rSTgy1gczoldqrojj30hi0hi770.jpg'
       // })
-      // ctx.drawImage(qrcode, 30, 340, 80, 80)
+      // ctx.drawImage(cooperation, 30, 340, 80, 80)
       // 将以上绘画操作进行渲染
       ctx.draw()
 
@@ -108,53 +109,112 @@ export default class Share extends Component {
      * 保存图图片到本地
      */
     saveCard = async () => {
+      const that = this
+      const { picture, width, height } = this.props
       //将canvas图片内容到出指定的大小的图片
       let res = await Taro.canvasToTempFilePath({
         x: 0,
         y: 0,
-        width: 400,
-        height: 500,
-        destWidth: 360,
-        destHeight: 450,
+        width: width,
+        height: height,
+        destWidth: width,
+        destHeight: height,
         canvasId: 'cardCanvas',
         fileType: 'png'
       })
       let saveRes = await Taro.saveImageToPhotosAlbum({
-        filePath: res.tempFilePath
+        filePath: res.tempFilePath,
+        success: data => {
+          that.setState({
+            ...that.state,
+            isShowCanvas: false
+          })
+          Taro.showModal({
+            title: '提示',
+            content: '您的二维码已保存到相册，赶快识别二维码添加小夕进行咨询吧',
+            showCancel: false,
+            success: res => {
+              if (res.confirm) {
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        },
+        fail: function (err) {
+          if (err.errMsg === "saveImageToPhotosAlbum:fail:auth denied" || err.errMsg === "saveImageToPhotosAlbum:fail auth deny" || err.errMsg === "saveImageToPhotosAlbum:fail authorize no response") {
+            // 这边微信做过调整，必须要在按钮中触发，因此需要在弹框回调中进行调用
+            Taro.showModal({
+              title: '提示',
+              content: '需要您授权保存相册',
+              showCancel: false,
+              success: modalSuccess => {
+                Taro.openSetting({
+                  success(settingdata) {
+                    console.log("settingdata", settingdata)
+                    if (settingdata.authSetting['scope.writePhotosAlbum']) {
+                      Taro.showModal({
+                        title: '提示',
+                        content: '获取权限成功,再次点击图片即可保存',
+                        showCancel: false,
+                      })
+                    } else {
+                      Taro.showModal({
+                        title: '提示',
+                        content: '获取权限失败，将无法保存到相册哦~',
+                        showCancel: false,
+                      })
+                    }
+                  },
+                  fail(failData) {
+                    console.log("failData", failData)
+                  },
+                  complete(finishData) {
+                    console.log("finishData", finishData)
+                  }
+                })
+              }
+            })
+          }
+        }
       })
-      if (saveRes.errMsg === 'saveImageToPhotosAlbum:ok') {
-        Taro.showModal({
-          title: '图片保存成功',
-          content: '图片成功保存到相册',
-          showCancel: false,
-          confirmText: '确认'
-        })
-      } else {
-        Taro.showModal({
-          title: '图片保存失败',
-          content: '请重新尝试',
-          showCancel: false,
-          confirmText: '确认'
-        })
-      }
+      // if (saveRes.errMsg === 'saveImageToPhotosAlbum:ok') {
+      //   Taro.showModal({
+      //     title: '图片保存成功',
+      //     content: '图片成功保存到相册',
+      //     showCancel: false,
+      //     confirmText: '确认',
+
+      //   })
+      // } else {
+      //   Taro.showModal({
+      //     title: '图片保存失败',
+      //     content: '请重新尝试',
+      //     showCancel: false,
+      //     confirmText: '确认'
+      //   })
+      // }
     }
 
     render () {
-      let { isShowCanvas } = this.state;
+      const { isShowCanvas } = this.state
+      const { width, height } = this.props
       return (
-        <View className='share-container'>
-          <Button onGetUserInfo={this.getUserInfo} openType="share" type="primary" size="mini" className="btn-share">分享图片</Button>
+        <View className='share-container' onClick={() => { this.setState({...this.state,
+          isShowCanvas: false,})}}>
+          <Button onGetUserInfo={this.getUserInfo} openType="getUserInfo" type="primary" size="mini" className="btn-share">{ this.props.children }</Button>
 
           {
             isShowCanvas &&
             <View className="canvas-wrap">
               <Canvas
+                onClick={this.saveCard}
                 id="card-canvas"
                 className="card-canvas"
-                style="width: 320px; height: 450px"
+                style={{width: width+'px', height: height+'px'}}
                 canvasId="cardCanvas">
               </Canvas>
-              <Button onClick={this.saveCard} className="btn-save" type="primary" size="mini">保存到相册</Button>
+              <Button onClick={this.saveCard} type="primary" size="mini" className="btn-save">点击保存图片</Button>
             </View>
           }
         </View>
