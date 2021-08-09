@@ -23,7 +23,7 @@ export default class Share extends Component {
     /**
      * 获取用户信息
      */
-    getUserInfo = (e) => {
+    getUserInfo = async (e) => {
       if(!e.detail.userInfo) {
         Taro.showToast({
           title: '获取用户信息失败，请授权',
@@ -31,7 +31,7 @@ export default class Share extends Component {
         })
         return
       }
-      const res = Taro.getSystemInfoSync()
+      const res = await Taro.getSystemInfoSync()
       const { screenHeight, screenWidth } = res
       this.setState({
         isShowCanvas: true,
@@ -49,8 +49,8 @@ export default class Share extends Component {
     drawImage = async () => {
       const { screenHeight, screenWidth } = this.state
       const { picture, width, height } = this.props
-      console.log(width, height)
-
+      const _w = width + 20
+      const _h = height + 20
       //创建canvas对象
       let ctx = Taro.createCanvasContext('cardCanvas');
       //填充背景色
@@ -58,7 +58,7 @@ export default class Share extends Component {
       grd.addColorStop(0, '#FFF'); // #1452d0
       grd.addColorStop(0.5, '#FFF');
       ctx.setFillStyle(grd);
-      ctx.fillRect((screenWidth-width)/2,(screenWidth-height)/2-100,width,height);
+      ctx.fillRect((screenWidth-width)/2,(screenHeight-height)/2-100,width,height);
 
       //绘制圆形用户头像
       // let { userInfo } = this.state;
@@ -214,7 +214,7 @@ export default class Share extends Component {
                 style={{width: width+'px', height: height+'px'}}
                 canvasId="cardCanvas">
               </Canvas>
-              <Button onClick={this.saveCard} type="primary" size="mini" className="btn-save">点击保存图片</Button>
+              <View onClick={this.saveCard} className="btn-save">点击保存图片</View>
             </View>
           }
         </View>

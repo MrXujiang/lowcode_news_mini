@@ -5,6 +5,7 @@ export default {
     'pages/combatDetail/index',
     'pages/help/index',
     'pages/login/index',
+    'pages/productList/index',
     'pages/webView/index'
   ],
   window: {

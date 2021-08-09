@@ -26,12 +26,8 @@
   justify-content: center;
   flex-direction: column;
   .btn-save {
-  background: none;
-  padding: 0;
-  margin: 0;
-    &:after {
-      border: none;
-    }
+    color: #fff;
+    margin-top: 5px;
   }
 }
 

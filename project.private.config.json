@@ -35,6 +35,12 @@
           "pathName": "pages/help/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/productList/index",
+          "pathName": "pages/productList/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
