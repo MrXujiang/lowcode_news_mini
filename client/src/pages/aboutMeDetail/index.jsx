@@ -1,56 +1,56 @@
 import React, { Component } from 'react'
 import { View, Text, Button, Image } from '@tarojs/components'
 import { Share } from '@components'
-import logo from '@assets/images/logo.png'
-import H5Dooring from '@assets/images/H5-Dooring.png'
-import V6Dooring from '@assets/images/V6.Dooring.png'
 
+import { withShare } from '@utils'
+import teamBanner from '@assets/images/teamBanner.png'
+import authorLogo from '@assets/images/author-logo.png'
+import up from '@assets/images/up.png'
 
 import './index.scss'
 
-const ProductIltem = (props) => {
-  const { title, content, picture, shareOption } = props.option
-  return (
-    <>
-      <View className="product-item">
-        <Image src={picture} className='logo-picture'></Image>
-        <View className="title">{title}</View>
-        <View className="content">{content}</View>
-        <Share picture={shareOption.picture} width={shareOption.width} height={shareOption.height}>
-          <View className="learn-more">了解详情</View>
-        </ Share>
-      </View>
+const config = [
+  {
+    img: authorLogo,
+    title: '产品/技术/运营',
+    name: '徐小夕'
+  },
+  {
+    img: authorLogo,
+    title: '产品',
+    name: '徐小夕'
+  },
+  {
+    img: authorLogo,
+    title: '技术',
+    name: '徐小夕'
+  },
+  {
+    img: authorLogo,
+    title: '技术',
+    name: '徐小夕'
+  },
+  {
+    img: authorLogo,
+    title: '设计/交互',
+    name: '徐小夕'
+  },
+  {
+    img: authorLogo,
+    title: '运营',
+    name: '徐小夕'
+  },
+  {
+    img: authorLogo,
+    title: '产品/技术/运营',
+    name: '徐小夕'
+  },
+]
 
-    </>
-
-  )
-}
-
+@withShare({})
 export default class Index extends Component {
   state = {
-    proList: [
-      {
-        picture: logo,
-        title: 'H5-Dooring编辑器',
-        content: '让H5制作更简单, 轻松帮你制作H5',
-        shareOption: {
-          picture: H5Dooring,
-          width: 250,
-          height: 445
-        },
-        id: 234234423,
-      },
-      {
-        title: 'V6.Dooring编辑器',
-        content: '让可视化大屏制作更简单, 轻松帮你制作可视化报表',
-        shareOption: {
-          picture: V6Dooring,
-          width: 250,
-          height: 445
-        },
-        id: 55654645,
-      }
-    ]
+
   }
 
   componentWillMount() {}
@@ -66,12 +66,41 @@ export default class Index extends Component {
   render() {
     const { proList } = this.state
     return (
-      <View className='product-list-container'>
-        {
-          proList.map(item => (
-              <ProductIltem key={item.id} option={item} />
-          ))
-        }
+      <View className="team-container">
+        <View className="team-wrap">
+          <View className="team-banner">
+            <Image className="banner-img" src={teamBanner}></Image>
+            <Image className="up" src={up}></Image>
+            <View className="share-btn">分享</View>
+          </View>
+          <View className="author-info">
+            <View className="top">
+              <Image src={authorLogo}></Image>
+              <Text>徐小夕</Text>
+            </View>
+            <View className="msg">
+            知乎专栏作家, 掘金优秀作者，定期分享前端工程化，可视化，企业实战项目知识，深度复盘企业中经常遇到的500+技术问题解决方案。
+            </View>
+          </View>
+          <View className="team-member">
+            <View className="title">团队成员</View>
+            <View className="member-list">
+              {
+                config.map(({img, name, title}) => (
+                  <View className="member-item">
+                    <Image src={img}></Image>
+                    <View>
+                      <Text>{title}</Text>
+                      <Text>{name}</Text>
+                    </View>
+                  </View>
+                ))
+              }
+            </View>
+          </View>
+        </View>
+
+        <View className="apply-join">申请加入</View>
       </View>
     )
   }

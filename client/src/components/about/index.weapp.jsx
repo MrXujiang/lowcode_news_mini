@@ -22,8 +22,8 @@ export default class About extends Component {
         {
           icon: 'home',
           title: '关于我们',
-          picture: followMe,
-          id: 111
+          id: 111,
+          link: '/pages/aboutMeDetail/index'
         },
         {
           icon: 'list',

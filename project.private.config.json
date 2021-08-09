@@ -41,6 +41,12 @@
           "pathName": "pages/productList/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/aboutMeDetail/index",
+          "pathName": "pages/aboutMeDetail/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
