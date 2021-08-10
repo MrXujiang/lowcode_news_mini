@@ -7,7 +7,7 @@ import { CombatList } from '../combat/components'
 import './index.scss'
 
 const config = {
-  tabList: [{ title: '趣谈打卡' }],
+  tabList: [{ title: '学习打卡' }],
   listInfo: [
     {
       title: '全国教育工作会议召开，传递这些重要信息！',
@@ -50,7 +50,7 @@ export default class Combat extends Component {
     return (
       <>
         <View className="combat-container">
-          <HomeScroll bannerTitle={'搜索实战课程'} />
+          <HomeScroll bannerTitle={'搜索打卡内容'} />
           <HomeTable tabList={tabList}>
             <CombatList listInfo={listInfo} />
           </HomeTable>
