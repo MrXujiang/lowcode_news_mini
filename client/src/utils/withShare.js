@@ -66,11 +66,6 @@ function withShare(opts = {}) {
         // 如果path不带参数，分享出去后解析的params里面会带一个{''： ''}
         const sharePath = `${path}&shareFromUser=${userInfo.shareId}`;
 
-        console.log({
-          title: title || defalutTitle,
-          path: sharePath,
-          imageUrl: imageUrl || defaultImageUrl
-        })
         return {
           title: title || defalutTitle,
           path: sharePath,

@@ -71,7 +71,7 @@ export default class Index extends Component {
           <View className="team-banner">
             <Image className="banner-img" src={teamBanner}></Image>
             <Image className="up" src={up}></Image>
-            <View className="share-btn">分享</View>
+            <Button openType='share' className="share-btn">分享</Button>
           </View>
           <View className="author-info">
             <View className="top">

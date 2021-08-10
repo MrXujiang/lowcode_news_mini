@@ -2,15 +2,13 @@ import React, { Component } from 'react'
 import Taro from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import { AtTabBar } from 'taro-ui'
-import { connect } from 'react-redux'
 import { withShare } from '@utils'
-import { config } from '@utils'
 
 import './index.scss'
 
-import { Home, Combat, Interview, About } from '@components'
+import { Home, Combat, ClockingIn, About } from '@components'
 
-const homeTabList = [ <Home />, <Combat />, <Interview />, <About /> ]
+const homeTabList = [ <Home />, <Combat />, <ClockingIn />, <About /> ]
 
 @withShare({
 
@@ -87,7 +85,7 @@ export default class Index extends Component {
           tabList={[
             {title: '首页', iconType: 'home'},
             {title: '实战', iconType: 'analytics'},
-            {title: '面试', iconType: 'streaming'},
+            {title: '打卡', iconType: 'streaming'},
             {title: '关于', iconType: 'user'}
           ]}
           onClick={this.handleClick}
