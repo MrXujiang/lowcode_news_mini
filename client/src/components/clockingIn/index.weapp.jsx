@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Taro from '@tarojs/taro'
+
 // 引入 Swiper, SwiperItem 组件
 import { View } from '@tarojs/components'
 import { HomeScroll, HomeTable } from '../home/components'
@@ -10,24 +12,27 @@ const config = {
   tabList: [{ title: '学习打卡' }],
   listInfo: [
     {
-      title: '全国教育工作会议召开，传递这些重要信息！',
-      info: '1月7日至8日，2021年全国教育工作会议在京召开。会议强调，要...',
-      createTime: '2021-03-08',
-      img: 'https://pic.imgdb.cn/item/60fbe96a5132923bf83b77c6.png',
-      id: '234234'
+      title: 'javascript算法第三周打卡',
+      info: '之前因为工作原因接触了很多有意思的算法知识,为了巩固大家的算法基础和编程能力,笔者将开展为期2个月的算法学习打卡, 每周3-5次算法训练, 并附有算法题的答案, 供大家学习参考. 接下来我们复盘第三周的算法打卡内容.',
+      createTime: ' 2020-06-01',
+      img: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt0114ibnlaUsCDDUicUgeDc5NTdmggsWqhPNREYcsic06XibRhc8LX1VQtHvgmpuVVch608VLjicyHIQy31VGg/0',
+      link: 'clockingIn',
+      id: '2247484544'
     },
     {
-      title: '分享奉贤教育经验，共同推进上海基础教育',
-      info: '由上海市教育委员会、中央电化教育馆指导，上海市教育学会、上...',
-      createTime: '2020-12-28',
-      img: 'https://pic.imgdb.cn/item/60fbe96a5132923bf83b77d5.png',
+      title: 'javascript算法学习打卡(第二周)',
+      info: '之前因为工作原因接触了很多有意思的算法知识,为了巩固大家的算法基础和编程能力,笔者将开展为期2个月的算法学习打卡, 每周3-5次算法训练, 并附有算法题的答案, 供大家学习参考. 接下来我们复盘第二周的算法打卡内容.',
+      createTime: '2020-05-26',
+      img: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt0114icZj4icXicV5RJ8td8OyU6t3I245fM1fyeXMcHTIw6hicos0oTLSsmtz3CT6hcGQ0UPPJ2ymaM8P5OcA/0',
+      link: 'clockingIn',
       id: '789798'
     },
     {
-      title: '2021考生迎来好消息，教育部发布两个通知',
-      info: '提到高考，相信大家就知道它的重要性不言而喻了吧！对于大部分...',
-      createTime: '2020-12-28',
-      img: 'https://pic.imgdb.cn/item/60fbe96a5132923bf83b77e8.png',
+      title: 'javascript算法学习打卡(第一周)',
+      info: '之前因为工作原因接触了很多有意思的算法知识,为了巩固大家的算法基础和编程能力,笔者将开展为期2个月的算法学习打卡, 每周3-5次算法训练, 并附有算法题的答案, 供大家学习参考. 接下来我们复盘第一周的算法打卡内容.',
+      createTime: '2020-05-19',
+      img: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt01149gynmx5N9VtQMva1icalQcNeofuZjibhYEXMQl9vtpMYawwepeib7w3490ibtBp3HicicASypLhVRibTdYg/0',
+      link: 'clockingIn',
       id: '342342'
     }
   ]
@@ -38,11 +43,18 @@ export default class Combat extends Component {
     this.state = {
       current: 0
     }
-    this.handleClick = (value) => {
-      this.setState({
-        current: value
-      })
-    }
+  }
+
+  componentDidMount() {
+    // Taro.navigateTo({
+    //   url: '/pages/webView/index?link=clockingIn'
+    // })
+  }
+
+  handleClick = (value) => {
+    this.setState({
+      current: value
+    })
   }
 
   render () {

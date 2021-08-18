@@ -11,9 +11,8 @@ export default class HomeScroll extends Component {
     this.state = {
       current: 0,
       imgUrls: [
-        'https://i.loli.net/2021/07/13/RUGtAgMQldcTneD.jpg',
-        'https://i.loli.net/2021/07/13/cCoWndJA3TZw6l5.jpg',
-        'https://i.loli.net/2021/07/13/PyZvh6wMxYrFzo5.jpg'
+        'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114icmVrW0UQ50SfeWEXOBqUkVub9tbc41HxfK6MEmS9O9flTjVTzQgmf4cicXFt34RfXARlsic4ZeXZpA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+        'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114ic15QY1YAhWzFjExGvuLMQ1T9fIFrj8jcOSmK85d2rJ3icdibCIMC4CJYkhOE7EiaFYPZw3smkIaI7Kw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1'
       ]
     }
     this.handleClick = (e) => {
@@ -41,7 +40,7 @@ export default class HomeScroll extends Component {
             autoplay>
             {
               imgUrls.map((imgUrl, index) => (
-                <SwiperItem key={index}>
+                <SwiperItem key={index} onClick={() => { Taro.navigateTo({ url: '/pages/webView/index?link=clinic' + '&index=' + index }) }}>
                   <Image lazyLoad src={imgUrl} className="slide-image" />
                 </SwiperItem>
               ))

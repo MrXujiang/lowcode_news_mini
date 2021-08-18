@@ -17,10 +17,12 @@
     justify-content: space-between;
     align-items: flex-start;
     .info-lf {
+      flex: 1;
       margin-right: 26px;
       .info {
         font-size: 26px;
         margin-bottom: 40px;
+        @include show_line(2);
       }
       .time {
         font-size: 24px;
@@ -29,6 +31,7 @@
     }
     .img-rt {
       width: 240px;
+      max-height: 180px;
     }
   }
 }

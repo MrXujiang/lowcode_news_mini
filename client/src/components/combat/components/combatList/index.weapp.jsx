@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Image } from '@tarojs/components'
+import { View, Image } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 // 引入 Swiper, SwiperItem 组件
 
@@ -16,12 +16,12 @@ export default class CombatList extends Component {
     return (
       <>
         {
-          listInfo.map(({ title, info, createTime, img, id }) => (
+          listInfo.map(({ title, info, createTime, img, link, id }, index) => (
             <View
               key={id}
               className="list-item" onClick={() => {
                 Taro.navigateTo({
-                  url: '/pages/combatDetail/index?id=' + id
+                  url: !link ? '/pages/combatDetail/index?id=' + id : '/pages/webView/index?link=' + link + '&index=' + index
                 })
               }}>
               <View className="top-title">{title}</View>
