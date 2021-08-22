@@ -136,7 +136,7 @@ export default class Share extends Component {
             success: res => {
               if (res.confirm) {
               } else if (res.cancel) {
-                console.log('用户点击取消')
+                // console.log('用户点击取消')
               }
             }
           })
@@ -151,7 +151,7 @@ export default class Share extends Component {
               success: modalSuccess => {
                 Taro.openSetting({
                   success(settingdata) {
-                    console.log("settingdata", settingdata)
+                    // console.log("settingdata", settingdata)
                     if (settingdata.authSetting['scope.writePhotosAlbum']) {
                       Taro.showModal({
                         title: '提示',
@@ -167,10 +167,10 @@ export default class Share extends Component {
                     }
                   },
                   fail(failData) {
-                    console.log("failData", failData)
+                    // console.log("failData", failData)
                   },
                   complete(finishData) {
-                    console.log("finishData", finishData)
+                    // console.log("finishData", finishData)
                   }
                 })
               }

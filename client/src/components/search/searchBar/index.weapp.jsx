@@ -19,7 +19,7 @@ export default class SearchBar extends Component {
   }
 
   onActionClick = () => {
-    console.log('开始搜索')
+    // console.log('开始搜索')
   }
 
   componentWillMount() {}

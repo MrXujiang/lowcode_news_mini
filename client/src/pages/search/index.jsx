@@ -69,7 +69,7 @@ export default class Index extends Component {
       ...this.state,
       isSearch: true
     })
-    console.log('开始搜索了')
+    // console.log('开始搜索了')
   }
 
   onClear = () => {

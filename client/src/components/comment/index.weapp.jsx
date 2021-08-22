@@ -12,7 +12,7 @@ export default class Comment extends Component {
   }
 
   onActionClick = () => {
-    console.log('开始搜索')
+    // console.log('开始搜索')
   }
 
   componentWillMount() {}
@@ -35,7 +35,7 @@ export default class Comment extends Component {
 
   // 评论点确认的时候
   onConfirmHandler = () => {
-    console.log('我点了个确认')
+    // console.log('我点了个确认')
   }
 
   render() {
