@@ -16,7 +16,9 @@ export default class LinkWebView extends Component {
         // 轮播
         clinic: ['https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=2247486118&idx=2&sn=0a29e3e89cc10dabf5aea8fe05df4079&scene=19#wechat_redirect', 'https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=2247486910&idx=2&sn=7ce865dd8a8f6769439f0e8eebb72212&scene=19#wechat_redirect'],
         // 实战
-        combat: ['https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=100000022&idx=2&sn=2bdfd5ac322a2fd05f620096c7cbcb9e&scene=19#wechat_redirect', 'https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=2247484346&idx=1&sn=b286d1d4795cb1757902c92162a3ae15&scene=19#wechat_redirect', 'https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=2247485389&idx=1&sn=29872c6dc7ccd0e46289d46af4cc84e9&scene=19#wechat_redirect']
+        combat: ['https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=100000022&idx=2&sn=2bdfd5ac322a2fd05f620096c7cbcb9e&scene=19#wechat_redirect', 'https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=2247484346&idx=1&sn=b286d1d4795cb1757902c92162a3ae15&scene=19#wechat_redirect', 'https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=2247485389&idx=1&sn=29872c6dc7ccd0e46289d46af4cc84e9&scene=19#wechat_redirect'],
+        news: [],
+        visual: ['https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=2247489467&idx=1&sn=be4b2a7f92f1c62e66432158212aee78&scene=19#wechat_redirect', 'https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=2247487877&idx=2&sn=770ff16d69d3e7ac2bbcd78e97ab8f32&scene=19#wechat_redirect', 'https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=2247490086&idx=1&sn=11e22e277ae8bad7a035971517b5fd75&scene=19#wechat_redirect', 'https://mp.weixin.qq.com/s?__biz=MzU2Mzk1NzkwOA==&mid=2247487950&idx=1&sn=e674a2f9379b9c9b8a149498a50c17f8&scene=19#wechat_redirect']
       }
     }
   }

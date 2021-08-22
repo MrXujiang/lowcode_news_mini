@@ -44,11 +44,11 @@ export default class HomeList extends Component {
             <View key={index} className='at-row at-row__justify--between info-list'>
               {/* 表格布局内容 */}
               {
-                item.map(({ imgUrl, star, type, title, id }) => (
+                item.map(({ imgUrl, star, type, title, link, id }, _index) => (
                   <View key={id} className='at-col at-col-6 at-col--wrap info-item'
                   onClick={() => {
                     Taro.navigateTo({
-                      url: '/pages/combatDetail/index?id=' + id
+                      url: !link ? '/pages/combatDetail/index?id=' + id : '/pages/webView/index?link=' + link + '&index=' + (index*2 + _index)
                     })
                   }}>
                     <View className="img-wrap">

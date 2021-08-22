@@ -11,8 +11,8 @@ export default class HomeScroll extends Component {
     this.state = {
       current: 0,
       imgUrls: [
-        'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114icmVrW0UQ50SfeWEXOBqUkVub9tbc41HxfK6MEmS9O9flTjVTzQgmf4cicXFt34RfXARlsic4ZeXZpA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
-        'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114ic15QY1YAhWzFjExGvuLMQ1T9fIFrj8jcOSmK85d2rJ3icdibCIMC4CJYkhOE7EiaFYPZw3smkIaI7Kw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1'
+        'https://i.loli.net/2021/08/23/rbp7VKDc8BniNmW.png',
+        'https://i.loli.net/2021/08/23/CYmnlcOZo1Sk5Rf.png'
       ]
     }
     this.handleClick = (e) => {

@@ -19,48 +19,176 @@ export default class Home extends Component {
     this.state = {
       active: 2,
       infoList: [
-        {
-          imgUrl: 'https://i.loli.net/2021/07/14/CDfcwZ3OlBtzdbR.png',
-          star: 1111,
-          type: 0,
-          title: '中式面点师考证课程【好利来教育培训】',
-          id: 89809
-        },
-        {
-          imgUrl: 'https://i.loli.net/2021/07/14/b9LcTzNM3FIklmj.png',
-          star: 2800,
-          type: 1,
-          title: '烘焙培训【安德鲁森培训】',
-          id: 45645
-        },
-        {
-          imgUrl: 'https://i.loli.net/2021/07/14/dnuFT9wlo43YNqh.png',
-          star: 12000,
-          type: 1,
-          title: '剑桥全球战略研学项目',
-          id: 23423
-        },
-        {
-          imgUrl: 'https://i.loli.net/2021/07/14/qDhrLNoGbK27pJR.png',
-          star: 1650,
-          type: 2,
-          title: '澳洲留学指南【科廷大学】',
-          id: 31234
-        },
-        {
-          imgUrl: 'https://i.loli.net/2021/07/14/wA4rXoWLShBn5TV.png',
-          star: 54000,
-          type: 3,
-          title: '四川大学【计算机科学与技术】',
-          id: 64464
-        },
-        {
-          imgUrl: 'https://i.loli.net/2021/07/14/dEWruiK8SnlX9IR.png',
-          star: 32000,
-          type: 4,
-          title: '中外影视作品与当代社会研究',
-          id: 89809
-        }
+        [
+          {
+            imgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114ibH2qicRRKQPictTeRQdibpRQr1FMu1kkp2cc966v0wVv0ayyPMqxMdTCpXXVciaic9Bn8FZDOYJjwnlzw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            star: 1111,
+            type: 0,
+            title: '从零设计可视化大屏搭建引擎',
+            link: 'visual',
+            id: 89809,
+          },
+          {
+            imgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114icrP4k9PU4xSbr7S25YMK6tBiamY9YFMDRSzmdc3ohHkibS7UKwiaQkX1U76uAlrZ4zsZ4RV64aotZcg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            star: 2800,
+            type: 1,
+            title: 'Dooring可视化搭建平台数据源设计剖析',
+            link: 'visual',
+            id: 45645
+          },
+          {
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt01149Q7UTFmLziac3Ce4TmmZsnXTBzxltQeTsIBvH4eQM9r7xfX5L6Po9WQ6mTg52PgJ0LpML5BibMomkg/0',
+            star: 12000,
+            type: 1,
+            title: '这款国外开源框架, 让你轻松构建自己的页面编辑器',
+            link: 'visual',
+            id: 23423
+          },
+          {
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt0114ib6UWQrfL0NibAdR3R3O2jqyUxB85hXhqxmXxvsQSAuL5tJyWKWVTypeeGoy5SMjKGepTialBB7hhFQ/0',
+            star: 1650,
+            type: 2,
+            title: '可视化搭建的一些思考和实践',
+            link: 'visual',
+            id: 31234
+          }
+        ],
+        [
+          {
+            imgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114ibH2qicRRKQPictTeRQdibpRQr1FMu1kkp2cc966v0wVv0ayyPMqxMdTCpXXVciaic9Bn8FZDOYJjwnlzw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            star: 1111,
+            type: 0,
+            title: '从零设计可视化大屏搭建引擎',
+            link: 'visual',
+            id: 89809
+          },
+          {
+            imgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114icrP4k9PU4xSbr7S25YMK6tBiamY9YFMDRSzmdc3ohHkibS7UKwiaQkX1U76uAlrZ4zsZ4RV64aotZcg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            star: 2800,
+            type: 1,
+            title: 'Dooring可视化搭建平台数据源设计剖析',
+            link: 'visual',
+            id: 45645
+          },
+          {
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt01149Q7UTFmLziac3Ce4TmmZsnXTBzxltQeTsIBvH4eQM9r7xfX5L6Po9WQ6mTg52PgJ0LpML5BibMomkg/0',
+            star: 12000,
+            type: 1,
+            title: '这款国外开源框架, 让你轻松构建自己的页面编辑器',
+            link: 'visual',
+            id: 23423
+          },
+          {
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt0114ib6UWQrfL0NibAdR3R3O2jqyUxB85hXhqxmXxvsQSAuL5tJyWKWVTypeeGoy5SMjKGepTialBB7hhFQ/0',
+            star: 1650,
+            type: 2,
+            title: '可视化搭建的一些思考和实践',
+            link: 'visual',
+            id: 31234
+          }
+        ],
+        [
+          {
+            imgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114ibH2qicRRKQPictTeRQdibpRQr1FMu1kkp2cc966v0wVv0ayyPMqxMdTCpXXVciaic9Bn8FZDOYJjwnlzw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            star: 1111,
+            type: 0,
+            title: '从零设计可视化大屏搭建引擎',
+            link: 'visual',
+            id: 89809
+          },
+          {
+            imgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114icrP4k9PU4xSbr7S25YMK6tBiamY9YFMDRSzmdc3ohHkibS7UKwiaQkX1U76uAlrZ4zsZ4RV64aotZcg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            star: 2800,
+            type: 1,
+            title: 'Dooring可视化搭建平台数据源设计剖析',
+            link: 'visual',
+            id: 45645
+          },
+          {
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt01149Q7UTFmLziac3Ce4TmmZsnXTBzxltQeTsIBvH4eQM9r7xfX5L6Po9WQ6mTg52PgJ0LpML5BibMomkg/0',
+            star: 12000,
+            type: 1,
+            title: '这款国外开源框架, 让你轻松构建自己的页面编辑器',
+            link: 'visual',
+            id: 23423
+          },
+          {
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt0114ib6UWQrfL0NibAdR3R3O2jqyUxB85hXhqxmXxvsQSAuL5tJyWKWVTypeeGoy5SMjKGepTialBB7hhFQ/0',
+            star: 1650,
+            type: 2,
+            title: '可视化搭建的一些思考和实践',
+            link: 'visual',
+            id: 31234
+          }
+        ],
+        [
+          {
+            imgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114ibH2qicRRKQPictTeRQdibpRQr1FMu1kkp2cc966v0wVv0ayyPMqxMdTCpXXVciaic9Bn8FZDOYJjwnlzw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            star: 1111,
+            type: 0,
+            title: '从零设计可视化大屏搭建引擎',
+            link: 'visual',
+            id: 89809
+          },
+          {
+            imgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114icrP4k9PU4xSbr7S25YMK6tBiamY9YFMDRSzmdc3ohHkibS7UKwiaQkX1U76uAlrZ4zsZ4RV64aotZcg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            star: 2800,
+            type: 1,
+            title: 'Dooring可视化搭建平台数据源设计剖析',
+            link: 'visual',
+            id: 45645
+          },
+          {
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt01149Q7UTFmLziac3Ce4TmmZsnXTBzxltQeTsIBvH4eQM9r7xfX5L6Po9WQ6mTg52PgJ0LpML5BibMomkg/0',
+            star: 12000,
+            type: 1,
+            title: '这款国外开源框架, 让你轻松构建自己的页面编辑器',
+            link: 'visual',
+            id: 23423
+          },
+          {
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt0114ib6UWQrfL0NibAdR3R3O2jqyUxB85hXhqxmXxvsQSAuL5tJyWKWVTypeeGoy5SMjKGepTialBB7hhFQ/0',
+            star: 1650,
+            type: 2,
+            title: '可视化搭建的一些思考和实践',
+            link: 'visual',
+            id: 31234
+          }
+        ],
+        [
+          {
+            imgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114ibH2qicRRKQPictTeRQdibpRQr1FMu1kkp2cc966v0wVv0ayyPMqxMdTCpXXVciaic9Bn8FZDOYJjwnlzw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            star: 1111,
+            type: 0,
+            title: '从零设计可视化大屏搭建引擎',
+            link: 'visual',
+            id: 89809
+          },
+          {
+            imgUrl: 'https://mmbiz.qpic.cn/mmbiz_png/dFTfMt0114icrP4k9PU4xSbr7S25YMK6tBiamY9YFMDRSzmdc3ohHkibS7UKwiaQkX1U76uAlrZ4zsZ4RV64aotZcg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1',
+            star: 2800,
+            type: 1,
+            title: 'Dooring可视化搭建平台数据源设计剖析',
+            link: 'visual',
+            id: 45645
+          },
+          {
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt01149Q7UTFmLziac3Ce4TmmZsnXTBzxltQeTsIBvH4eQM9r7xfX5L6Po9WQ6mTg52PgJ0LpML5BibMomkg/0',
+            star: 12000,
+            type: 1,
+            title: '这款国外开源框架, 让你轻松构建自己的页面编辑器',
+            link: 'visual',
+            id: 23423
+          },
+          {
+            imgUrl: 'http://mmbiz.qpic.cn/mmbiz_jpg/dFTfMt0114ib6UWQrfL0NibAdR3R3O2jqyUxB85hXhqxmXxvsQSAuL5tJyWKWVTypeeGoy5SMjKGepTialBB7hhFQ/0',
+            star: 1650,
+            type: 2,
+            title: '可视化搭建的一些思考和实践',
+            link: 'visual',
+            id: 31234
+          }
+        ],
       ]
     }
   }
@@ -80,7 +208,7 @@ export default class Home extends Component {
           <HomeScroll bannerTitle={'搜索求职/面试/实战'} />
           <HomeTable tabList={tabList} current={active} handleClick={this.handleClick}>
             {/* 单条表格内容 */}
-            <HomeList column={2} infoList={infoList} />
+            <HomeList column={2} infoList={infoList[active]} />
           </HomeTable>
         </View>
       </>
