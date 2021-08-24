@@ -6,7 +6,7 @@ import { withShare } from '@utils'
 import teamBanner from '@assets/images/teamBanner.png'
 import authorLogo from '@assets/images/author-logo.png'
 import up from '@assets/images/up.png'
-import cooperation from '@assets/images/cooperation.png'
+import followMe from '@assets/images/follow-me.png'
 
 import './index.scss'
 
@@ -102,7 +102,7 @@ export default class Index extends Component {
         </View>
 
           <View className="apply-join">
-            <Share picture={cooperation} width={230} height={230}>申请加入</Share>
+            <Share picture={followMe} width={230} height={230}>申请加入</Share>
           </View>
 
 
