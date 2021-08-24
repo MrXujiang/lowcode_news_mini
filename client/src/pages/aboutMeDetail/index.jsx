@@ -6,6 +6,7 @@ import { withShare } from '@utils'
 import teamBanner from '@assets/images/teamBanner.png'
 import authorLogo from '@assets/images/author-logo.png'
 import up from '@assets/images/up.png'
+import cooperation from '@assets/images/cooperation.png'
 
 import './index.scss'
 
@@ -82,7 +83,7 @@ export default class Index extends Component {
             知乎专栏作家, 掘金优秀作者，定期分享前端工程化，可视化，企业实战项目知识，深度复盘企业中经常遇到的500+技术问题解决方案。
             </View>
           </View>
-          <View className="team-member">
+          {/* <View className="team-member">
             <View className="title">团队成员</View>
             <View className="member-list">
               {
@@ -97,10 +98,14 @@ export default class Index extends Component {
                 ))
               }
             </View>
-          </View>
+          </View> */}
         </View>
 
-        <View className="apply-join">申请加入</View>
+          <View className="apply-join">
+            <Share picture={cooperation} width={230} height={230}>申请加入</Share>
+          </View>
+
+
       </View>
     )
   }

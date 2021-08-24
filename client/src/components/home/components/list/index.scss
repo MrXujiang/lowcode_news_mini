@@ -1,5 +1,13 @@
 @import '../../../../styles/mixin.scss';
 
+.home-list {
+  .empty {
+    min-height: 290px;
+    text-align: center;
+    color: #aaa;
+    margin-top: 200px;
+  }
+}
 .info-list {
   font-size: 28px;
   .at-col-6 {

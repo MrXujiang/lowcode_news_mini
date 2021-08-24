@@ -208,13 +208,13 @@ export default class Share extends Component {
             isShowCanvas &&
             <View className="canvas-wrap">
               <Canvas
-                onClick={this.saveCard}
+                onTouchEnd={this.saveCard}
                 id="card-canvas"
                 className="card-canvas"
                 style={{width: width+'px', height: height+'px'}}
                 canvasId="cardCanvas">
               </Canvas>
-              <View onClick={this.saveCard} className="btn-save">点击保存图片</View>
+              <View onTouchEnd={this.saveCard} className="btn-save">点击保存图片</View>
             </View>
           }
         </View>

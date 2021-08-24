@@ -53,10 +53,11 @@ export default class HomeScroll extends Component {
               ))
             }
           </View>
-          <View onClick={this.toSearchPage} className="search-wrap">
+          {/* 搜索组件 */}
+          {/* <View onClick={this.toSearchPage} className="search-wrap">
             <Text>{bannerTitle}</Text>
             <Image lazyLoad src={search} />
-          </View>
+          </View> */}
         </View>
       </>
 
